@@ -18,7 +18,7 @@ from import_export.admin import ExportActionMixin
 from .models import Kpi
 
 
-admin.site.register(Kpi)
+# admin.site.register(Kpi)
 # admin.site.register(Derpartamentos)
 # admin.site.register(Subdirecciones)
 # admin.site.register(FichasProcesos)
@@ -65,8 +65,8 @@ class SubprocesosAdmin(ExportActionMixin, admin.ModelAdmin):
 
 # Añadir aqui modelo para indicadores (KPI)
 
-# @admin.register(Kpi)
-# class KpiAdmin(ExportActionMixin, admin.ModelAdmin):
-#     list_display = ("id_kpi", "nombre_kpi", "descripcion_indicador")
-#     search_fields = ["id_kpi", "nombre_kpi", "descripcion_indicador"]
-#     list_filter = ["id_kpi", "nombre_kpi", "descripcion_indicador"]
+@admin.register(Kpi)
+class KpiAdmin(ExportActionMixin, admin.ModelAdmin):
+    list_display = ("id_kpi", "nombre_kpi", "descripcion_indicador")
+    search_fields = ["id_kpi", "nombre_kpi", "descripcion_indicador"]
+    list_filter = ["id_kpi", "nombre_kpi", "descripcion_indicador"]
